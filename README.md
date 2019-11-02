@@ -1,2 +1,4 @@
-# secret-santa
-Secret Santa Mail Sender in Java
+# Secret Santa Java implementation
+## it communicates matching couples anonymously through emails
+
+TODO: finish readme
