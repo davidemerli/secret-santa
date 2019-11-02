@@ -3,7 +3,7 @@
 #
 # Lines starting with '#' will be ignored.
 #
-# The lines in the format <name1>:<name2> will be excluded from the matching
+# The lines in the format <from>:<to> will be excluded from the matching
 # (provided they are both in the 'participants.txt' file)
 # Below is an example
 Mario Rossi:John White
