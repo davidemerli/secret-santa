@@ -57,6 +57,7 @@ public class Main {
                 sorting.put(m, toChoose.get(new Random().nextInt(toChoose.size())));
             } else {
                 System.out.println("toChoose size is <= 0 (??)");
+                System.exit(-1);
             }
         });
 
@@ -71,7 +72,8 @@ public class Main {
             String text = message.toString().replaceAll("%from", from.name).replaceAll("%to", to.name);
 
             try {
-                System.out.printf("from %s to %s\n", from.name, to.name);
+//                System.out.printf("from %s to %s\n", from.name, to.name);
+
                 mailSender.sendMail(text, from.mail);
             } catch (MessagingException ex) {
                 System.out.println(String.format("Couldn't send email to '%s'", to.mail));

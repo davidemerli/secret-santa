@@ -25,11 +25,11 @@ class MailSender {
     }
 
     void sendMail(String body, String... to) throws MessagingException {
-        String subject = "SECRET SANTA 2.0!";
+        String subject = "SECRET SANTA!";
 
         System.out.println(String.format("sent mail to: %s", to[0]));
 
-//        sendFromGMail(USER_NAME, PASSWORD, to, subject, body);
+        sendFromGMail(USER_NAME, PASSWORD, to, subject, body);
     }
 
     private void sendFromGMail(String from, String pass, String[] to, String subject, String body) throws MessagingException {
@@ -43,25 +43,25 @@ class MailSender {
         props.put("mail.smtp.auth", "true");
 
         Session session = Session.getDefaultInstance(props);
-        MimeMessage message = new MimeMessage(session);
+        MimeMessage m = new MimeMessage(session);
 
-        message.setFrom(new InternetAddress(from));
+        m.setFrom(new InternetAddress(from));
 
         Arrays.stream(to)
                 .forEach(s -> {
                     try {
                         InternetAddress ia = new InternetAddress(s);
-                        message.addRecipient(Message.RecipientType.TO, ia);
+                        m.addRecipient(Message.RecipientType.TO, ia);
                     } catch (MessagingException ex) {
                         ex.printStackTrace();
                     }
                 });
 
-        message.setSubject(subject);
-        message.setText(body);
-        Transport transport = session.getTransport("smtp");
-        transport.connect(host, from, pass);
-        transport.sendMessage(message, message.getAllRecipients());
-        transport.close();
+        m.setSubject(subject);
+        m.setText(body);
+        Transport t = session.getTransport("smtp");
+        t.connect(host, from, pass);
+        t.sendMessage(m, m.getAllRecipients());
+        t.close();
     }
 }

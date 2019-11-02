@@ -1,0 +1,15 @@
+# Secret Santa Anonymous Mail Sender
+# Made by Davide Merli (https://github.com/davidemerli/)
+#
+# This is the message that will be forwarded to people
+#
+# the '%from' and '%to' are the placeholders for the matched pair names
+#
+# Below is an example
+Hi %from! Your Secret Santa match this year is %to!
+Happy gifting :)
+
+
+
+
+sent using https://github.com/davidemerli/secret-santa

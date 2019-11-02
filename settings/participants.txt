@@ -1,0 +1,9 @@
+# Secret Santa Anonymous Mail Sender
+# Made by Davide Merli (https://github.com/davidemerli/)
+#
+# Lines starting with '#' will be ignored.
+#
+# Every line in the <name>:<email> format is added as a participant.
+#
+# Below is an example
+The Quick Brown Fox:thequick@brown.fox
